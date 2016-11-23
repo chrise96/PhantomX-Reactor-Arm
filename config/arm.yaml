@@ -1,0 +1,16 @@
+port: /dev/ttyUSB0
+read_rate: 15
+write_rate: 25
+joints: {
+    base: {id: 1, neutral: 205, max_angle: 180, min_angle: -60, max_speed: 30},
+    shoulder: {id: 2, max_angle: 150, min_angle: -150, max_speed: 30},
+    shoulder2: {id: 3, synched: 2, max_angle: 150, min_angle: -150, max_speed: 30},
+    elbow: {id: 4, max_angle: 150, min_angle: -150, max_speed: 30},
+    elbow2: {id: 5, synched: 4, max_angle: 150, min_angle: -150, max_speed: 30},
+    wrist_flex: {id: 6, max_angle: 100, min_angle: -100, max_speed: 30},
+    wrist_rotation: {id: 7, max_angle: 100, min_angle: -100, max_speed: 30},
+    gripper: {id: 8, max_speed: 30},
+}
+controllers: {
+    arm_controller: {type: follow_controller, joints: [base, shoulder, shoulder2, elbow, elbow2, wrist_flex, wrist_rotation], action_name: arm_controller/follow_joint_trajectory, onboard: False }
+}
