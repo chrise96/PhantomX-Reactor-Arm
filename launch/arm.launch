@@ -1,7 +1,7 @@
 <launch>
 
   <node name="arbotix" pkg="arbotix_python" type="arbotix_driver" output="screen">
-      <rosparam file="$(find Gesture_Library)/config/arm.yaml" command="load" />
+      <rosparam file="$(find arm_node)/config/arm.yaml" command="load" />
   </node>
 
   <node name="gripper_controller" pkg="arbotix_controllers" type="gripper_controller">
